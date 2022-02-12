@@ -1,17 +1,70 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="utf-8">
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-    <link rel="icon" href="<%= BASE_URL %>favicon.ico">
-    <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floriana'sFriends</title>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
+    <script type="text/javascript" src="https://unpkg.com/@faker-js/faker"></script>
+
+    <script>
+        // Caitlyn Kerluke
+        const randomName = faker.name.findName();
+      
+        // Rusty@arne.info
+        const randomEmail = faker.internet.email();
+      
+        // An object representing a random contact card
+        // containing many properties
+        const randomCard = faker.helpers.createCard();
+    </script>
+
+    <script>
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+    apiKey: "AIzaSyAF4D4fwlNyDbTGyXSfHJZKTTBeDGsP4mo",
+    authDomain: "florianasfriends.firebaseapp.com",
+    projectId: "florianasfriends",
+    storageBucket: "florianasfriends.appspot.com",
+    messagingSenderId: "528184157444",
+    appId: "1:528184157444:web:502a3005860fee09e85c51"
+    };
+
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <script src="app.js" defer> 
+
+    </script>
+
+</head>
+
+<body>
+
+    <h1> Florianas Friends rise! </h1>
+
+    <section id="whenSignedOut">
+
+        <button id="signInBtn"> Sign in with Google </button>
+
+    </section>
+
+    <section id="whenSignedIn" hidden="true"> 
+
+        <div id="userDetails"> </div>
+        
+        <button id="signOutBtn"> Sign out </button>
+
+    </section>
+
+
+
+</body>
+
 </html>
