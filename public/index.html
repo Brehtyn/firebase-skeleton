@@ -7,22 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Floriana'sFriends</title>
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Faker/3.0.1/faker.min.js" integrity="sha512-mN1+P8Ee2KIZzAZ5GOFWCX/2vSOgEDmhMVPVeKr3XCWV3ulUikZT4tyqsJ5V4EF0iM2k1qgVmDX/97cO5cFPdQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-auth.js"></script>
-    <script type="text/javascript" src="https://unpkg.com/@faker-js/faker"></script>
-
-    <script>
-        // Caitlyn Kerluke
-        const randomName = faker.name.findName();
-      
-        // Rusty@arne.info
-        const randomEmail = faker.internet.email();
-      
-        // An object representing a random contact card
-        // containing many properties
-        const randomCard = faker.helpers.createCard();
-    </script>
 
     <script>
     // Your web app's Firebase configuration
@@ -38,9 +27,8 @@
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
     </script>
-
+    
     <script src="app.js" defer> 
-
     </script>
 
 </head>
@@ -63,7 +51,15 @@
 
     </section>
 
+    <section> 
 
+        <ul id="thingsList"> 
+
+        </ul>
+
+        <button id="createThing"> Create Random Thing </button>
+
+    </section>
 
 </body>
 
